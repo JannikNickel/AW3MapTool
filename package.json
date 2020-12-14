@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron src/index.js",
+    "pack": "electron-builder build --dir",
     "dist": "electron-builder build"
   },
   "build": {
@@ -17,7 +18,7 @@
   },
   "keywords": [],
   "author": "Jannik Nickel",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^11.0.5",
     "electron-builder": "^22.9.1"
