@@ -1,0 +1,28 @@
+{
+  "name": "aw3-map-tool",
+  "version": "1.0.0",
+  "description": "A tool to decompress and compress battle and prefab files from Ancient Warfare 3",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron src/index.js",
+    "dist": "electron-builder build"
+  },
+  "build": {
+    "appId": "aw3.map.tool",
+    "productName": "AW3 Map Tool",
+    "win": {
+      "target": "portable",
+      "icon": "web/res/icons/appicon_x256.png"
+    }
+  },
+  "keywords": [],
+  "author": "Jannik Nickel",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.0.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "zlib": "^1.0.5"
+  }
+}

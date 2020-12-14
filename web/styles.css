@@ -1,0 +1,219 @@
+* {
+    margin: 0; padding: 0; border: 0; vertical-align: baseline;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    background: #1a1c20;
+    color: #DDDDDD;
+    overflow-y: hidden;
+    border: 1px solid #1a1c20;
+}
+
+.titlebar {
+    display: block;
+    position: fixed;
+    height: 32px;
+    width: calc(100% - 2px);/*Reduce for 1px body border*/
+    background: #262930;
+}
+
+.titlebar .dragRegion {
+    width: 100%;
+    height: 100%;
+    -webkit-app-region: drag;
+    display: grid;
+    grid-template-columns: 138px;
+}
+
+.windowIcon {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 3px;
+    display: flex;
+}
+
+.windowTitle {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    margin-left: calc(7px + 32px);
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.windowTitle span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+.windowControls {
+    display: grid;
+    grid-template-columns: repeat(2, 46px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    -webkit-app-region: no-drag;
+}
+
+.windowControls .button {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.windowControls .button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.windowControls .button:active {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+#minButton {
+    grid-column: 1;
+}
+
+#closeButton {
+    grid-column: 2;
+}
+
+#closeButton:hover {
+    background: #D71526 !important;
+}
+
+#closeButton:active {
+    background: #d72736 !important;
+}
+
+#content {
+    height: calc(100% - 32px);
+    margin-top: 32px;
+    overflow-y: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.row {
+    margin-top: 5px;
+    height: 32px;
+    width: 100%;
+}
+
+.tabContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.tabItem {
+    background-color: #34363d;
+    margin-right: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: auto;
+    height: 100%;
+    border-radius: 0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.tabItem:hover {
+    opacity: 1.0;
+}
+
+.tabItem:active {
+    opacity: 0.8;
+}
+
+.inlineContainer {
+    display: flex;
+    width: 100%;
+    min-height: 32px;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.pathText {
+    display: flex;
+    font-size: 14px;
+    opacity: 0.8;
+    flex-grow: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.rightButton {
+    background-color: #34363d;
+    width: 125px;
+    display: flex;
+    border-radius: 2px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.rightButton:hover {
+    opacity: 1.0;
+}
+
+.rightButton:active {
+    opacity: 0.8;
+}
+
+.rightButton p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    -webkit-user-select: none;
+}
+
+.workProgressbar {
+    -webkit-appearance: progress-bar;
+    display: inline-block;
+}
+
+.workProgressbar::-webkit-progress-bar {
+    background-color: #17191b;
+    border-radius: 2px;
+}
+
+.workProgressbar::-webkit-progress-value {
+    background-color: rgba(47, 134, 236, 0.78);
+    border-radius: 2px;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+}
